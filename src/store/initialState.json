@@ -1,0 +1,139 @@
+{
+  "cards": [
+    {
+      "id": 0,
+      "style": {
+        "position": { 
+          "x": 323, "y": 292, "z": 0
+         },
+         "rotation": 0,
+         "scale": {
+          "x": 1.0, "y": 1.0, "z": 1.0
+         },
+         "size": {
+          "width": 475, "height": 495 
+         },
+         "opacity": 1.0
+      },
+      "targets": [
+        {
+          "type": "image",
+          "path": "http://localhost:3000/cards/square_01.png",
+          "id": 0
+        },
+        {
+          "type": "video",
+          "path": "/opt/contents/nemoux/cards/card1.mp4",
+          "id": 1
+        }
+      ],
+      "link": {
+        "type": "url",
+        "value": "http://www.google.com"
+      },
+      "animation": {
+        "idle": "none",
+        "grabOn": "track",
+        "grabOut": "fadeout"
+      },
+      "shadow": "10px 10px 5px #888888"
+    },
+    {
+      "id": 1,
+      "style": {
+        "position": { 
+          "x": 1121, "y": 292, "z": 0
+         },
+         "rotation": 0,
+         "scale": {
+          "x": 1.0, "y": 1.0, "z": 1.0
+         },
+         "size": {
+          "width": 475, "height": 495 
+         },
+         "opacity": 1.0
+      },
+      "targets": [
+        {
+          "type": "image",
+          "path": "http://localhost:3000/cards/square_02.png",
+          "id": 0
+        },
+        {
+          "type": "video",
+          "path": "/opt/contents/nemoux/cards/card2.mp4",
+          "id": 1
+        }
+      ],
+      "link": {
+        "type": "url",
+        "value": "http://www.google.com"
+      },
+      "animation": {
+        "idle": "none",
+        "grabOn": "track",
+        "grabOut": "fadeout"
+      },
+      "shadow": "10px 10px 5px #888888"
+    }
+  ],
+  "backgrounds": [
+    {
+      "id": 0,
+      "style": {
+        "position": { 
+          "x": 0, "y": 0, "z": 0 
+         },
+        "rotation": 0,
+        "scale": {
+          "x": 1.0, "y": 1.0, "z": 1.0
+        },
+        "size": {
+          "width": 1920, "height": 1080
+        },
+        "opacity": 1.0
+      },
+      "targets": [
+        {
+          "type": "image",
+          "path": "http://localhost:3000/bgs/bg0.png",
+          "id": 0
+        },
+        {
+          "type": "video",
+          "path": "http://localhost:3000/bgs/bg0.mp4",
+          "id": 1
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "style": {
+        "position": { 
+          "x": 0, "y": 0, "z": 0
+         },
+        "rotation": 0,
+        "scale": {
+          "x": 1.0, "y": 1.0, "z": 1.0
+        },
+        "size": {
+          "width": 1920, "height": 1080
+        },
+        "opacity": 1.0 
+      },
+      "targets": [
+        {
+          "type": "video",
+          "path": "http://localhost:3000/bgs/bg0.mp4",
+          "id": 0
+        },
+        {
+          "type": "image",
+          "path": "http://localhost:3000/bgs/bg1.png",
+          "id": 1
+        }
+      ]
+    }
+  ],
+  "currentBackgroundId": 0
+}
