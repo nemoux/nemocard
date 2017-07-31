@@ -11,14 +11,14 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onClick: () => {
-      console.log('hello flake container');
+      console.log('hello cards one');
     }
   }
 }
 
-const FlakeContainer = connect(
+const CardsOne = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Flake);
 
-export default FlakeContainer;
+export default CardsOne;
