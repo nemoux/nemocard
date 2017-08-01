@@ -2,7 +2,7 @@ import React from 'react';
 import { func, object } from 'prop-types';
 import Image from './Image';
 import Video from './Video';
-import Bodymovin from './Bodymovin';
+import Motion from './Motion';
 import StyledFlake from './StyledFlake';
 
 const Flake = ({ onClick, metadata }) => {
@@ -18,8 +18,8 @@ const Flake = ({ onClick, metadata }) => {
         component = (<Image key={target.id} {...size} src={target.path} />);
       } else if (target.type === 'video') {
         component = (<Video key={target.id} {...size} src={target.path} />);
-      } else if (target.type === 'bodymovin') {
-        component = (<Bodymovin key={target.id} />);
+      } else if (target.type === 'motion') {
+        component = (<Motion key={target.id} />);
       } else {
         component = (<div></div>);
       }
