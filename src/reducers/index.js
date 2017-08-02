@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux';
-import { cards } from './card';
-import { backgrounds, currentBackgroundId } from './background';
+import * as card from './card';
+import * as background from './background';
 
 export default combineReducers({
-  cards,
-  backgrounds,
-  currentBackgroundId
+  ...card,
+  ...background,
   // Add other reducers here
 });

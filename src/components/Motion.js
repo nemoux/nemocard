@@ -2,6 +2,16 @@ import React from 'react';
 import Bodymovin from 'bodymovin';
 
 class Motion extends React.Component {
+  constructor(props) {
+    super(props);
+    this.style = {
+      width: "100%",
+      position: 'absolute',
+      left: '0px',
+      top: '0px'
+    };
+  }
+
   componentDidMount () {
     var options = {};
     options.wrapper = this.wrapper;
@@ -31,7 +41,7 @@ class Motion extends React.Component {
       this.wrapper = el;
     }
 
-    return <div className='react-bodymovin-component' ref={storeWrapper} />;
+    return <div className='react-bodymovin-component' style={this.style} ref={storeWrapper} />
   }
 }
 

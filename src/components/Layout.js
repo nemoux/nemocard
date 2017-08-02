@@ -1,16 +1,20 @@
 import React from 'react';
 import { array } from 'prop-types';
-import CardsOne from '../containers/CardsOne';
+import Flake from './Flake';
 import StyledLayout from './StyledLayout';
 
 const Layout = (props) => {
-  const cardsOnes = props.items.map(item => 
-    <CardsOne key={item.id} metadata={item} />
-  );
+  const param = {
+    option: props.option,
+    listeners: props.listeners
+  };
 
   return (
     <StyledLayout>
-      {cardsOnes}
+      { props.items.map(
+          item => <Flake key={item.id} metadata={item} {...param} />
+        )
+      }
     </StyledLayout>
   );
 }

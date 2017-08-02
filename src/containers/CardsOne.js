@@ -3,6 +3,7 @@ import Flake from '../components/Flake';
 // import some actions if Flake component should be changed by some events
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps)
   return {
     ...ownProps
   }
@@ -11,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onClick: () => {
-      console.log('hello cards one');
+      console.log('card clicked');
     }
   }
 }

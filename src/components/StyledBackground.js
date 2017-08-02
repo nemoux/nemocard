@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledLayout = ({children}) => {
+const StyledBackground = ({children}) => {
   const Wrapper = styled.div`
     position: fixed;
     left: 0%;
@@ -11,7 +11,7 @@ const StyledLayout = ({children}) => {
     height: 100vh;
     justify-content: center;
     flex-flow: row wrap;
-    align-items: center;    
+    align-items: stretch;    
     background-color: transparent;
   `;
 
@@ -22,4 +22,4 @@ const StyledLayout = ({children}) => {
   );
 }
 
-export default StyledLayout;
+export default StyledBackground;

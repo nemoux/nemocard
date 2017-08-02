@@ -5,20 +5,20 @@ import Video from './Video';
 import Motion from './Motion';
 import StyledFlake from './StyledFlake';
 
-const Flake = ({ onClick, metadata }) => {
+const Flake = ({ metadata, option, listeners }) => {
   let targets = metadata.targets.sort((a,b) => {
-    return b.id - a.id;
+    return a.id - b.id;
   });
 
   targets = targets.map(target => {
       let component = null;
 
       if (target.type === 'image') {
-        component = (<Image key={target.id} width="100%" height="100%" src={target.path} />);
+        component = (<Image key={target.id} src={target.path} />);
       } else if (target.type === 'video') {
-        component = (<Video key={target.id} width="100%" height="100%" src={target.path} />);
+        component = (<Video key={target.id} src={target.path} />);
       } else if (target.type === 'motion') {
-        component = (<Motion key={target.id} width="100%" height="100%" options={target} />);
+        component = (<Motion key={target.id} options={target} />);
       } else {
         component = (<div></div>);
       }
@@ -27,11 +27,11 @@ const Flake = ({ onClick, metadata }) => {
     });
 
   return (
-    <div onClick={onClick}>
-      <StyledFlake style={metadata.style}>
+    <StyledFlake option={option} style={metadata.style} order={metadata.id}>
+      <div {...listeners}>
         {targets}
-      </StyledFlake>
-    </div>
+      </div>
+    </StyledFlake>
   );
 }
 
