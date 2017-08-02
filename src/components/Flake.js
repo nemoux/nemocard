@@ -19,7 +19,7 @@ const Flake = ({ onClick, metadata }) => {
       } else if (target.type === 'video') {
         component = (<Video key={target.id} {...size} src={target.path} />);
       } else if (target.type === 'motion') {
-        component = (<Motion key={target.id} />);
+        component = (<Motion key={target.id} {...size} options={target} />);
       } else {
         component = (<div></div>);
       }
