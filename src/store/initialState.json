@@ -57,12 +57,15 @@
         {
           "type": "image",
           "path": "http://localhost:3000/cards/square_02.png",
-          "id": 0
+          "id": 1
         },
         {
-          "type": "video",
-          "path": "/opt/contents/nemoux/cards/card2.mp4",
-          "id": 1
+          "type": "motion",
+          "path": "http://localhost:3000/jsons/happy2016.json",
+          "loop": true,
+          "autoplay": true,
+          "prerender": true,
+          "id": 0
         }
       ],
       "link": {
