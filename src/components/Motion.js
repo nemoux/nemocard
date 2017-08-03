@@ -13,6 +13,7 @@ class Motion extends React.Component {
     
     this.wrapper.style.width = this.props.width;
     this.wrapper.style.height = this.props.height;
+    this.wrapper.draggable = true;
     
     this.animation = Bodymovin.loadAnimation(options);
   }
