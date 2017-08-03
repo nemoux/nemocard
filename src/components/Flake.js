@@ -12,14 +12,13 @@ const Flake = ({ onClick, metadata }) => {
 
   targets = targets.map(target => {
       let component = null;
-      const size = metadata.style.size;
 
       if (target.type === 'image') {
-        component = (<Image key={target.id} {...size} src={target.path} />);
+        component = (<Image key={target.id} width="100%" height="100%" src={target.path} />);
       } else if (target.type === 'video') {
-        component = (<Video key={target.id} {...size} src={target.path} />);
+        component = (<Video key={target.id} width="100%" height="100%" src={target.path} />);
       } else if (target.type === 'motion') {
-        component = (<Motion key={target.id} {...size} options={target} />);
+        component = (<Motion key={target.id} width="100%" height="100%" options={target} />);
       } else {
         component = (<div></div>);
       }
