@@ -17,6 +17,14 @@ $ npm test (for verifying features)
 
 $ npm run build (for production)
 
+### running on electron
+If you want to run this app on electron, please run the following commands in each terminal.
+
+$ npm run start-app
+$ npm run start-electron
+
+If react code is changed, just run 2nd command again.
+
 ### Trouble Shootings
 If you have errors regarding watchers during 'npm test', try the following.
 Increasing the limit of inotify watchers solves that problem.
