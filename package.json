@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bodymovin": "^4.10.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "react-scripts": "1.0.10",
     "redux": "^3.7.2",
-    "styled-components": "^2.1.1",
-    "bodymovin": "^4.10.0"
+    "styled-components": "^2.1.1"
   },
   "scripts": {
     "start": "cross-env NODE_PATH=src react-scripts start",

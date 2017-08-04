@@ -4,12 +4,25 @@ import Layout from '../components/Layout';
 
 const mapStateToProps = state => {
   return {
-    items: state.cards
+    items: state.cards,
+    option: state.cardOption
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    listeners: {
+      onClick: () => {
+        console.log('card clicked');
+      }
+      // add other react event listeners
+    }
   }
 }
 
 const CardsLayout = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Layout);
 
 export default CardsLayout;

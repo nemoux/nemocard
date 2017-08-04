@@ -1,27 +1,24 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-const StyledFlake = (props) => {
+const StyledFlake = ({option, style, order, children}) => {
+  // TODO if you should apply flake specific feature, 
+  // add css attribute here using 'style' props from parent
   const Wrapper = styled.div`
-    position: fixed;
-    left: ${props.style.position.x}px;
-    top: ${props.style.position.y}px;
-    z-index: ${props.style.position.z};
-    opacity: ${props.style.opacity};
-    width: ${props.style.size.width}px;
-    height: ${props.style.size.height}px;
-    transform: scale(${props.style.scale.x}, ${props.style.scale.y}) rotate(${props.style.rotation}deg);
-    `;
-
-  const children = props.children.map((child, index) => 
-    <Wrapper key={ index }>
-      {child}
-    </Wrapper>
-  );
+    position: relative;
+    background-color: red;
+    order: ${order};
+    flex-grow: 0;
+    ${option.size === 'fitted' ? 'width: 100%; height: 100%': ''}
+    flex-basis: ${option.size !== undefined ? option.size : 150}px;
+    margin: ${option.margin !== undefined ? option.margin : 20}px;
+  `;
 
   return (
-    <div> {children} </div>
-  )
+    <Wrapper>
+      {children}
+    </Wrapper>
+  );
 }
 
 export default StyledFlake;

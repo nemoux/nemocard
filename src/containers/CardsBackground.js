@@ -1,17 +1,19 @@
 import { connect } from 'react-redux';
-import Flake from '../components/Flake';
+import Background from '../components/Background';
 import { showBgNextOne } from '../actions'
 
 const mapStateToProps = state => {
   return {
     metadata: state.backgrounds[state.currentBackgroundId],
-    items: state.backgrounds
+    items: state.backgrounds,
+    option: state.backgroundOption
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onClick: (total) => {
+      console.log('background clicked');
       dispatch(showBgNextOne(total));
     }
   }
@@ -28,6 +30,6 @@ const CardsBackground = connect(
   mapStateToProps,
   mapDispatchToProps,
   mergeProps
-)(Flake);
+)(Background);
 
 export default CardsBackground;
