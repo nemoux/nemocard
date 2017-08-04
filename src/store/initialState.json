@@ -8,7 +8,7 @@
       "targets": [
         {
           "type": "image",
-          "path": "http://localhost:3000/cards/square_01.png",
+          "path": "http://localhost:7000/cards/square_01.png",
           "id": 0
         },
         {
@@ -35,12 +35,12 @@
       "targets": [
         {
           "type": "image",
-          "path": "http://localhost:3000/cards/square_02.png",
+          "path": "http://localhost:7000/cards/square_02.png",
           "id": 0
         },
         {
           "type": "motion",
-          "path": "http://localhost:3000/jsons/happy2016.json",
+          "path": "http://localhost:7000/jsons/happy2016.json",
           "loop": true,
           "autoplay": true,
           "prerender": true,
@@ -65,7 +65,7 @@
       "targets": [
         {
           "type": "image",
-          "path": "http://localhost:3000/cards/square_03.png",
+          "path": "http://localhost:7000/cards/square_03.png",
           "id": 0
         }
       ],
@@ -82,7 +82,7 @@
       "targets": [
         {
           "type": "image",
-          "path": "http://localhost:3000/cards/square_04.png",
+          "path": "http://localhost:7000/cards/square_04.png",
           "id": 0
         }
       ],
@@ -101,12 +101,12 @@
       "targets": [
         {
           "type": "image",
-          "path": "http://localhost:3000/bgs/bg0.png",
+          "path": "http://localhost:7000/bgs/bg0.png",
           "id": 1
         },
         {
           "type": "video",
-          "path": "http://localhost:3000/bgs/bg0.mp4",
+          "path": "http://localhost:7000/bgs/bg0.mp4",
           "id": 0
         }
       ]
@@ -119,12 +119,12 @@
       "targets": [
         {
           "type": "image",
-          "path": "http://localhost:3000/bgs/bg1.png",
+          "path": "http://localhost:7000/bgs/bg1.png",
           "id": 0
         },
         {
           "type": "video",
-          "path": "http://localhost:3000/bgs/bg0.mp4",
+          "path": "http://localhost:7000/bgs/bg0.mp4",
           "id": 1
         }
       ]
