@@ -41,7 +41,7 @@ function createWindow () {
 function getStartUrl() {
   let startUrl = null
   if (process.env.NODE_ENV !== "production") {
-    startUrl = 'http://localhost:3000'
+    startUrl = 'http://localhost:7000'
   } else {
     startUrl = url.format({
       pathname: path.join(__dirname, '../../build/index.html'),
