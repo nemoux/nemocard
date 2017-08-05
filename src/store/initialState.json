@@ -5,15 +5,15 @@
       "style": {
          "opacity": 1.0
       },
-      "targets": [
+      "contents": [
         {
           "type": "image",
-          "path": "http://localhost:7000/cards/square_01.png",
+          "src": "http://localhost:7000/cards/square_01.png",
           "id": 0
         },
         {
           "type": "video",
-          "path": "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4",
+          "src": "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4",
           "id": 1
         }
       ],
@@ -32,15 +32,15 @@
       "style": {
          "opacity": 1.0
       },
-      "targets": [
+      "contents": [
         {
           "type": "image",
-          "path": "http://localhost:7000/cards/square_02.png",
+          "src": "http://localhost:7000/cards/square_02.png",
           "id": 0
         },
         {
           "type": "motion",
-          "path": "http://localhost:7000/jsons/happy2016.json",
+          "src": "http://localhost:7000/jsons/happy2016.json",
           "loop": true,
           "autoplay": true,
           "prerender": true,
@@ -62,10 +62,10 @@
       "style": {
          "opacity": 1.0
       },
-      "targets": [
+      "contents": [
         {
           "type": "image",
-          "path": "http://localhost:7000/cards/square_03.png",
+          "src": "http://localhost:7000/cards/square_03.png",
           "id": 0
         }
       ],
@@ -79,10 +79,10 @@
       "style": {
          "opacity": 1.0
       },
-      "targets": [
+      "contents": [
         {
           "type": "image",
-          "path": "http://localhost:7000/cards/square_04.png",
+          "src": "http://localhost:7000/cards/square_04.png",
           "id": 0
         }
       ],
@@ -98,15 +98,15 @@
       "style": {
         "opacity": 1.0
       },
-      "targets": [
+      "contents": [
         {
           "type": "image",
-          "path": "http://localhost:7000/bgs/bg0.png",
+          "src": "http://localhost:7000/bgs/bg0.png",
           "id": 1
         },
         {
           "type": "video",
-          "path": "http://localhost:7000/bgs/bg0.mp4",
+          "src": "http://localhost:7000/bgs/bg0.mp4",
           "id": 0
         }
       ]
@@ -116,15 +116,15 @@
       "style": {
         "opacity": 1.0
       },
-      "targets": [
+      "contents": [
         {
           "type": "image",
-          "path": "http://localhost:7000/bgs/bg1.png",
+          "src": "http://localhost:7000/bgs/bg1.png",
           "id": 0
         },
         {
           "type": "video",
-          "path": "http://localhost:7000/bgs/bg0.mp4",
+          "src": "http://localhost:7000/bgs/bg0.mp4",
           "id": 1
         }
       ]

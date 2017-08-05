@@ -1,26 +1,16 @@
 import React from 'react';
-import { array } from 'prop-types';
-import Flake from './Flake';
+import ReactTransitionGroup from 'react-addons-transition-group';
 import StyledLayout from './StyledLayout';
+import AnimatedLayout from './AnimatedLayout';
 
 const Layout = (props) => {
-  const param = {
-    option: props.option,
-    listeners: props.listeners
-  };
-
   return (
     <StyledLayout>
-      { props.items.map(
-          item => <Flake key={item.id} metadata={item} {...param} />
-        )
-      }
+      <ReactTransitionGroup key="AnimatedLayout">
+        <AnimatedLayout {...props} />
+      </ReactTransitionGroup>
     </StyledLayout>
   );
 }
-
-Layout.propTypes = {
-  items: array.isRequired
-};
 
 export default Layout;
