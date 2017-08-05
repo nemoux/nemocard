@@ -15,6 +15,9 @@ const installExtensions = async () => {
     .catch(console.log);
 };
 
+app.commandLine.appendSwitch('--touch-events');
+app.commandLine.appendSwitch('--enable-transparent-visuals');
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
