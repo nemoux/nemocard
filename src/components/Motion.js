@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Bodymovin from 'bodymovin';
 
 class Motion extends React.Component {
@@ -13,19 +14,20 @@ class Motion extends React.Component {
   }
 
   componentDidMount () {
-    var options = {};
-    options.wrapper = this.wrapper;
-    options.renderer = 'svg';
-    options.loop = this.props.options.loop;
-    options.autoplay = this.props.options.autoplay;
-    options.prerender = this.props.options.prerender;
-    options.path = this.props.options.path;
+    var option = {};
+    option.wrapper = this.wrapper;
+    option.renderer = 'svg';
+    option.loop = this.props.option.loop;
+    option.autoplay = this.props.option.autoplay;
+    option.prerender = this.props.option.prerender;
+    option.path = this.props.option.src;
     
     this.wrapper.style.width = this.props.width;
     this.wrapper.style.height = this.props.height;
     this.wrapper.draggable = true;
     
-    this.animation = Bodymovin.loadAnimation(options);
+    this.animation = Bodymovin.loadAnimation(option);
+    this.props.refCallback(ReactDOM.findDOMNode(this));
   }
 
   componentWillUnmount () {

@@ -4,7 +4,7 @@ import { showBgNextOne } from '../actions'
 
 const mapStateToProps = state => {
   return {
-    metadata: state.backgrounds[state.currentBackgroundId],
+    currentItem: state.backgrounds[state.currentBackgroundId],
     items: state.backgrounds,
     option: state.backgroundOption
   }
@@ -12,9 +12,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: (total) => {
-      console.log('background clicked');
-      dispatch(showBgNextOne(total));
+    listeners: {
+      onClick: (total) => {
+        console.log('background clicked');
+        dispatch(showBgNextOne(total));
+      }
     }
   }
 }
@@ -22,7 +24,9 @@ const mapDispatchToProps = (dispatch) => {
 const mergeProps = (propsFromState, propsFromDispatch, ownProps) => {
   return {
     ...propsFromState,
-    onClick: () => propsFromDispatch.onClick(propsFromState.items.length)
+    listeners: {
+      onClick: () => propsFromDispatch.listeners.onClick(propsFromState.items.length)
+    }
   }
 }
 
