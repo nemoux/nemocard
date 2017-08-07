@@ -8,7 +8,17 @@ import Motion from './Motion';
 import * as animeMethods from '../libs/anime-methods';
 
 class AnimatedFlake extends React.Component {
-  contentElements = [];
+  constructor(props) {
+    super(props);
+    this.contentElements = [];
+    this.listeners = {};
+    for (let key in props.listeners) {
+      this.listeners[key] = props.listeners[key].bind({
+        item: props.item,
+        option: props.option
+      });
+    }
+  }
 
   componentDidMount() {
     console.log("content element count: ", this.contentElements.length);
@@ -31,7 +41,7 @@ class AnimatedFlake extends React.Component {
   }
 
   render() {
-    const { item, option, listeners } = this.props;
+    let { item, option } = this.props;
 
     const getContent = (target) => {
       let ContentComponent = <div />;
@@ -52,7 +62,7 @@ class AnimatedFlake extends React.Component {
     const contents = item.contents.sort((a, b) => { return a.id - b.id });
 
     return (
-      <div {...listeners}>
+      <div {...this.listeners}>
         { contents.map(getContent) }
       </div>
     );

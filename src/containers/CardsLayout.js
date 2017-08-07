@@ -12,9 +12,14 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     listeners: {
-      onClick: () => {
-        console.log('card clicked');
+      onClick: function() {
+        // 'this' property consists 'item', 'option'.
+        // 'item' has a flake specific properties
+        // 'option' has commonely used properties for all flakes 
+        console.log('onClick item: ', this.item);
+        console.log('onClick option: ', this.option);
       }
+
       // add other react event listeners
     }
   }
