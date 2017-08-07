@@ -28,6 +28,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mergeProps = (propsFromState, propsFromDispatch, ownProps) => {
   return {
+    ...propsFromState,
     listeners: {
       onClick: function() {
         const listener = propsFromDispatch.listeners.onClick.bind(this);
