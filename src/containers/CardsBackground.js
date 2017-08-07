@@ -13,8 +13,13 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
   return {
     listeners: {
-      onClick: (total) => {
-        console.log('background clicked');
+      onClick: function(total) {
+        // 'this' property consists 'item', 'option'.
+        // 'item' has a flake specific properties
+        // 'option' has commonely used properties for all flakes
+        console.log('onClick item: ', this.item);
+        console.log('onClick option: ', this.option);
+
         dispatch(showBgNextOne(total));
       }
     }
@@ -23,9 +28,11 @@ const mapDispatchToProps = (dispatch) => {
 
 const mergeProps = (propsFromState, propsFromDispatch, ownProps) => {
   return {
-    ...propsFromState,
     listeners: {
-      onClick: () => propsFromDispatch.listeners.onClick(propsFromState.items.length)
+      onClick: function() {
+        const listener = propsFromDispatch.listeners.onClick.bind(this);
+        listener(propsFromState.items.length);
+      }
     }
   }
 }
