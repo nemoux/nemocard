@@ -1,5 +1,5 @@
 import React from 'react';
-import { array, object } from 'prop-types';
+import { object } from 'prop-types';
 import StyledBackground from './StyledBackground';
 import Flake from './Flake';
 
@@ -7,7 +7,7 @@ const Background = (props) => {
   return (
     <StyledBackground>
       <Flake
-        refCallback={() => console.log('bg flake')}
+        refCallback={(el) => console.log('bg flake')}
         item={props.currentItem}
         option={props.option}
         listeners={props.listeners}>
