@@ -17,7 +17,7 @@ export function advertise(type, path) {
 	client.write(JSON.stringify(msg));
 }
 
-export function execute(action, x, y) {
+export function execute(action, x, y, r) {
 	var msg = {};
 	
 	msg.from = '/nemocard';
@@ -54,6 +54,7 @@ export function execute(action, x, y) {
 	
 	msg.command.states += 'x;' + x + ';';
 	msg.command.states += 'y;' + y + ';';
+	msg.command.states += 'r;' + (r * 180.0 / Math.PI) + ';';
 	
 	for (var key in action.state) {
 		msg.command.states += key + ';' + action.state[key] + ';';
