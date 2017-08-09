@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         console.log('onClick option: ', this.option);
 
 				if (process.env.ELECTRON) {
-					nemobusMethods.execute(this.item.action, 0, 0, 0);
+          nemobusMethods.execute(this.item.action, 0, 0, 0);
 				}
       }
 

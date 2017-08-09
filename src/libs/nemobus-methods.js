@@ -53,10 +53,11 @@ export function execute(action, x, y, r) {
 	}
 	
 	msg.command.states += 'x;' + x + ';';
-	msg.command.states += 'y;' + y + ';';
-	msg.command.states += 'r;' + (r * 180.0 / Math.PI) + ';';
-	
-	for (var key in action.state) {
+  msg.command.states += 'y;' + y + ';';
+  msg.command.states += 'r;' + (r * 180.0 / Math.PI) + ';';
+  msg.command.states += 'coordination;local;';
+  
+  for (var key in action.state) {
 		msg.command.states += key + ';' + action.state[key] + ';';
 	}
 	
