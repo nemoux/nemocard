@@ -31,7 +31,11 @@ export function execute(action, x, y) {
 	if (action.path) {
 		msg.command.path = action.path;
 	} else if (action.pkgname) {
-		msg.command.path = '/opt/pkgs/' + action.pkgname + '/exec';
+		if (process.env.NEMOUX_INSTALL_PACKAGES) {
+			msg.command.path = process.env.NEMOUX_INSTALL_PACKAGES + '/' + action.pkgname + '/exec';
+		} else {
+			msg.command.path = '/opt/pkgs/' + action.pkgname + '/exec';
+		}
 	}
 	
 	for (var key in action.param) {
@@ -54,8 +58,6 @@ export function execute(action, x, y) {
 	for (var key in action.state) {
 		msg.command.states += key + ';' + action.state[key] + ';';
 	}
-
-	console.log('msg: ', msg);
 	
 	client.write(JSON.stringify(msg));
 }
