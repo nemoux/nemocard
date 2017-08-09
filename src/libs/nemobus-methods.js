@@ -28,12 +28,6 @@ export function execute(action, x, y) {
 	msg.command.envp = '';
 	msg.command.states = '';
 	
-	if (action.path) {
-		msg.command.path = action.path;
-	} else if (action.pkgname) {
-		msg.command.path = '/opt/pkgs/' + action.pkgname + '/exec';
-	}
-	
 	for (var key in action.param) {
 		if (key === '#optind') {
 			msg.command.args += action.param[key] + ';';
