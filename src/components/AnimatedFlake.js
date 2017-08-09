@@ -5,6 +5,7 @@ import { func, object } from 'prop-types';
 import Image from './Image';
 import Video from './Video';
 import Motion from './Motion';
+import StyledFlake from './StyledFlake';
 import * as animeMethods from '../libs/anime-methods';
 
 class AnimatedFlake extends React.Component {
@@ -18,6 +19,12 @@ class AnimatedFlake extends React.Component {
         option: props.option
       });
     }
+
+    this.styleParam = {
+      option: props.option,
+      style: props.item.style,
+      order: props.item.id
+    };
   }
 
   componentDidMount() {
@@ -43,27 +50,29 @@ class AnimatedFlake extends React.Component {
   render() {
     let { item, option } = this.props;
 
-    const getContent = (target) => {
+    const getContent = (content) => {
       let ContentComponent = <div />;
 
-      if (target.type === 'image') {
+      if (content.type === 'image') {
         ContentComponent = Image;
-      } else if (target.type === 'video') {
+      } else if (content.type === 'video') {
         ContentComponent = Video;
-      } else if (target.type === 'motion') {
+      } else if (content.type === 'motion') {
         ContentComponent = Motion;
       } else {
-        console.error('This content is not supported: ', target.type);
+        console.error('This content is not supported: ', content.type);
       }
 
-      return <ContentComponent refCallback={el => this.contentElements.push(el)} key={target.id} option={target} />
+      return <ContentComponent refCallback={el => this.contentElements.push(el)} key={content.id} option={content} />
     }
 
     const contents = item.contents.sort((a, b) => { return a.id - b.id });
 
     return (
       <div {...this.listeners}>
-        { contents.map(getContent) }
+        <StyledFlake {...this.styleParam}>
+          { contents.map(getContent) }
+        </StyledFlake>
       </div>
     );
   }

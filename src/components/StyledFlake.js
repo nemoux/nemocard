@@ -9,8 +9,8 @@ const StyledFlake = ({option, style, order, children}) => {
     background-color: red;
     order: ${order};
     flex-grow: 0;
-    ${option.size === 'fitted' ? 'width: 100%; height: 100%;': ''}
     width: ${option.size !== undefined ? option.size : 150}px;
+    ${option.size === 'fitted' ? 'width: 100vw; height: 100vh;': ''}
     margin: ${option.margin !== undefined ? option.margin : 20}px;
   `;
 

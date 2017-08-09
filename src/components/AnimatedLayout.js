@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { array, object } from 'prop-types';
 import Flake from './Flake';
 import * as animeMethods from '../libs/anime-methods';
+import StyledLayout from './StyledLayout';
 
 class AnimatedLayout extends React.Component {
   flakeElements = [];
@@ -27,7 +28,8 @@ class AnimatedLayout extends React.Component {
   }
 
   render() {
-    return <div>
+    return (
+      <StyledLayout>
       {
         this.props.items.map(item => 
           <Flake 
@@ -39,7 +41,8 @@ class AnimatedLayout extends React.Component {
           </Flake>
         )
       }
-    </div>
+      </StyledLayout>
+    );
   }
 }
 
