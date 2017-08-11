@@ -25,11 +25,21 @@
         "idle": "none",
         "grabOn": "track",
         "grabOut": "fadeout"
-      }
-    },
-    {
-      "id": 1,
-      "style": {
+      },
+			"action": {
+				"type": "app",
+				"path": "/usr/bin/electron",
+				"param": {
+					"#optind": "https://www.google.com"
+				},
+				"state": {
+					"resize": false
+				}
+			}
+		},
+		{
+			"id": 1,
+			"style": {
          "opacity": 1.0
       },
       "contents": [
@@ -55,7 +65,17 @@
         "idle": "none",
         "grabOn": "track",
         "grabOut": "fadeout"
-      }
+      },
+			"action": {
+				"type": "app",
+				"path": "/usr/bin/electron",
+				"param": {
+					"#optind": "https://www.naver.com"
+				},
+				"state": {
+					"resize": false
+				}
+			}
     },
     {
       "id": 2,
@@ -72,6 +92,16 @@
       "link": {
         "type": "url",
         "value": "http://www.google.com"
+      },
+			"action": {
+				"type": "app",
+				"path": "/usr/bin/electron",
+				"param": {
+					"#optind": "https://www.google.com"
+				},
+				"state": {
+					"resize": false
+				}
       }
     },
     {
@@ -89,6 +119,16 @@
       "link": {
         "type": "url",
         "value": "http://www.google.com"
+      },
+			"action": {
+				"type": "app",
+				"path": "/usr/bin/electron",
+				"param": {
+					"#optind": "https://www.naver.com"
+				},
+				"state": {
+					"resize": false
+				}
       }
     }
   ],
