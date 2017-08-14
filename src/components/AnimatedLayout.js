@@ -4,6 +4,9 @@ import { array, object } from 'prop-types';
 import Flake from './Flake';
 import * as animeMethods from '../libs/anime-methods';
 import StyledLayout from './StyledLayout';
+import DropLayer from './DropLayer';
+import DragPreview from './DragPreview';
+import { DragItemTypes } from './Interactable';
 
 class AnimatedLayout extends React.Component {
   flakeElements = [];
@@ -15,8 +18,7 @@ class AnimatedLayout extends React.Component {
   componentWillAppear(callback) {
     console.log('will appear');
     animeMethods.enterSample1(this.flakeElements, {}, callback);
-  }
-
+  } 
   componentWillEnter(callback) {
     console.log('will enter');
     animeMethods.enterSample1(this.flakeElements, {}, callback);
@@ -30,17 +32,19 @@ class AnimatedLayout extends React.Component {
   render() {
     return (
       <StyledLayout>
-      {
-        this.props.items.map(item => 
-          <Flake 
-            key={item.id}
-            refCallback={(el) => this.flakeElements.push(el)}
-            item={item}
-            option={this.props.option}
-            listeners={this.props.listeners}>
-          </Flake>
-        )
-      }
+        <DragPreview />
+        <DropLayer dragType={DragItemTypes.FLAKE} />
+        {
+          this.props.items.map(item => 
+            <Flake 
+              key={item.id}
+              refCallback={(el) => this.flakeElements.push(el)}
+              item={item}
+              option={this.props.option}
+              listeners={this.props.listeners}>
+            </Flake>
+          )
+        }
       </StyledLayout>
     );
   }

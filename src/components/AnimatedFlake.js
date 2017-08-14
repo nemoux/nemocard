@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { func, object } from 'prop-types';
@@ -67,7 +66,6 @@ class AnimatedFlake extends React.Component {
     }
 
     const contents = item.contents.sort((a, b) => { return a.id - b.id });
-
     return (
       <div {...this.listeners}>
         <StyledFlake {...this.styleParam}>

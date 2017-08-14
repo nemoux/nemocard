@@ -4,12 +4,14 @@ import StyledLayout from './StyledLayout';
 import AnimatedLayout from './AnimatedLayout';
 import Flake from './Flake';
 
-const Layout = (props) => {
-  return (
-    <ReactTransitionGroup key="AnimatedLayout">
-      <AnimatedLayout {...props} />
-    </ReactTransitionGroup>
-  );
+class Layout extends React.Component {
+  render() {
+    return (
+      <ReactTransitionGroup key="AnimatedLayout">
+        <AnimatedLayout {...this.props} />
+      </ReactTransitionGroup>
+    );
+  }
 }
 
 export default Layout;
